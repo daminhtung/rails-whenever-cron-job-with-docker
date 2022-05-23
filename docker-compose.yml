@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    command: [/bin/sh, start.sh]
+    volumes:
+      - .:/crontab_demo
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+    ports:
+      - "3000:3000"
